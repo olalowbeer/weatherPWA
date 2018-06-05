@@ -1,21 +1,29 @@
+html {
+  height: 100%;
+}
+
 body {
   margin: 20px;
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  height: 100%;
+  font-family: 'Futura', Arial,Helvetica,sans-serif;
   color: #000;
-  background-color: #fff;
 }
 
 header {
-  margin-bottom: 40px;
-  text-align: center;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   img {
-    width: 100px;
+    width: 150px;
     -webkit-animation: bounce-top 0.9s both;
             animation: bounce-top 0.9s both;
   }
   h1 {
-    margin: 10px 0 0 0;
-    font-size: 3rem;
+    margin: 0;
+    font-size: 2rem;
+    position: absolute;
+    z-index: 1;
   }
   p {
     margin: 0;
@@ -26,10 +34,13 @@ header {
   display: flex;
   align-items: center;
   flex-direction: column;
+  label {
+    font-size: .6rem;
+  }
   input {
     margin: 10px 0 0 0;
     padding: 5px 0 5px 5px;
-    width: 220px;
+    width: 240px;
     height: 25px;
     border: 1px solid #f2f2f2;
   }
@@ -38,7 +49,14 @@ header {
 .weatherDisplay {
   margin-top: 20px;
   text-align: center;
-  h2, h3 {
+  img {
+    width: 80px;
+  }
+  h2 {
+    margin: 5px;
+    text-transform: uppercase;
+  }
+  h3 {
     margin: 0;
   }
 }
