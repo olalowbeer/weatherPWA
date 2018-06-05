@@ -1,13 +1,44 @@
 body {
-  margin: 0;
-  font-family: 'Circular-Book', sans-serif;
+  margin: 20px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: #000;
+  background-color: #fff;
 }
 
-h1 {
-  font-family: 'Circular-Black', sans-serif;
+header {
+  margin-bottom: 40px;
+  text-align: center;
+  img {
+    width: 100px;
+    -webkit-animation: bounce-top 0.9s both;
+            animation: bounce-top 0.9s both;
+  }
+  h1 {
+    margin: 10px 0 0 0;
+    font-size: 3rem;
+  }
+  p {
+    margin: 0;
+  }
 }
 
-.container {
+.searchContainer {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  input {
+    margin: 10px 0 0 0;
+    padding: 5px 0 5px 5px;
+    width: 220px;
+    height: 25px;
+    border: 1px solid #f2f2f2;
+  }
+}
+
+.weatherDisplay {
+  margin-top: 20px;
+  text-align: center;
+  h2, h3 {
+    margin: 0;
+  }
 }

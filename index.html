@@ -41,7 +41,23 @@ if ('serviceWorker' in navigator) {
 </head>
 <body>
   <div class="container">
-    <h1>Weather!</h1>
+    <header>
+      <h1>
+        <img src="images/big_icon" alt="Weather icon" />
+      </h1> 
+      <p>The best weather app up to date</p>
+    </header>
+    <main>
+      <div class="searchContainer">
+        <label for="searchCity">Search weather in...</label>
+        <input type="text" name="searchCity" placeholder="Search...">
+      </div>
+      <div class="weatherDisplay">
+        <h2>Göteborg</h2>
+        <h3>Temp: 13°C</h3>
+        <p>clear sky</p>
+      </div>
+    </main>
   </div>
 </body>
 </html>
