@@ -3,12 +3,20 @@
 const searchCity = document.getElementById('searchCity');
 const appID = '3f811f4e602b5451b64f25e97ad55d60';
 const weatherParam = 'weather';
+const button = document.querySelector('button');
+const ul = document.querySelector('ul');
+let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 
 searchCity.addEventListener('change', () => {
     const searchValue = searchCity.value;
     getTodaysWeather(searchValue);
-    document.getElementById('searchCity').value = '';
+    //document.getElementById('searchCity').value = '';
+    itemsArray.push(searchCity.value);
+    localStorage.setItem('items', JSON.stringify(itemsArray));
+    liMaker(searchCity.value);
+    searchCity.value = " ";
 })
+
 
 getTodaysWeather();
 
@@ -49,3 +57,31 @@ function displayWeather(weatherData) {
     weatherInfoElement.innerHTML = weatherInfo;
 }
 
+
+localStorage.setItem('items', JSON.stringify(itemsArray));
+const data = JSON.parse(localStorage.getItem('items'));
+
+const liMaker = (text) => {
+const searchCity = document.getElementById('searchCity');
+  const li = document.createElement('li');
+  li.textContent = text;
+  li.id= searchCity.value;
+  ul.appendChild(li);
+   li.addEventListener('click', function(){
+        getTodaysWeather(li.id)    
+    });
+    
+}
+
+
+
+data.forEach(item => {
+  liMaker(item);
+});
+
+button.addEventListener('click', function () {
+  localStorage.clear();
+  while (ul.firstChild) {
+    ul.removeChild(ul.firstChild);
+  }
+});
