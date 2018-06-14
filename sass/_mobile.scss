@@ -1,62 +1,76 @@
-html {
+html, body, .container {
   height: 100%;
 }
 
 body {
-  margin: 20px;
-  height: 100%;
-  font-family: 'Futura', Arial,Helvetica,sans-serif;
-  color: #000;
+  font-family: 'Volte Regular', sans-serif;
+  color: #3d3d3d;
+  letter-spacing: .03rem;
+  text-align: center;
+  background-color: #f2f2f2;
 }
 
-header {
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  img {
-    width: 150px;
-    -webkit-animation: bounce-top 0.9s both;
-            animation: bounce-top 0.9s both;
-  }
-  h1 {
-    margin: 0;
-    font-size: 2rem;
-    position: absolute;
-    z-index: 1;
-  }
-  p {
-    margin: 0;
-  }
-}
-
-.searchContainer {
+.container {
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+h1, h2 {
+  margin: 0;
+  font-family: 'Volte Bold', sans-serif;
+  letter-spacing: .05rem;
+}
+
+h1 {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #fff000;
+}
+
+strong {
+  font-family: 'Volte Semibold', sans-serif;
+}
+
+#umbrella {
+  margin: 20px 0;
+  width: 100px;
+}
+
+.inputWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   label {
-    font-size: .6rem;
+    margin-bottom: 5px;
+    font-size: .8rem;
   }
-  input {
-    margin: 10px 0 0 0;
-    padding: 5px 0 5px 5px;
-    width: 240px;
-    height: 25px;
-    border: 1px solid #f2f2f2;
+  #searchCity {
+    padding: 10px;
+    width: 280px;
+    font-family: monospace;
+    font-size: 1rem;
+    letter-spacing: .05rem;
+    text-align: center;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid #000;
   }
 }
 
-.weatherDisplay {
-  margin-top: 20px;
-  text-align: center;
-  img {
-    width: 80px;
-  }
-  h2 {
-    margin: 5px;
-    text-transform: uppercase;
-  }
-  h3 {
+#weatherInfo {
+  margin: 20px 0 0 0;
+  padding: 20px;
+  min-width: 270px;
+  background-color: #fff;
+  border: 5px solid #3d3d3d;
+  ul {
     margin: 0;
+    padding-left: 0;
+    list-style: none;
+    li {
+      margin: 5px;
+    }
   }
 }
