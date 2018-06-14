@@ -1,3 +1,5 @@
+
+
 const searchCity = document.getElementById('searchCity');
 const appID = '3f811f4e602b5451b64f25e97ad55d60';
 const weatherParam = 'weather';
@@ -11,7 +13,7 @@ searchCity.addEventListener('change', () => {
 getTodaysWeather();
 
 function getTodaysWeather(city = "Stockholm") {
-    fetch(`http://api.openweathermap.org/data/2.5/${weatherParam}?q=${city}&APPID=${appID}&units=metric`)
+    fetch(`https://api.openweathermap.org/data/2.5/${weatherParam}?q=${city}&APPID=${appID}&units=metric`)
         .then((response) => response.json())
         .then((weatherData) => {
             displayWeather(weatherData);
@@ -35,7 +37,7 @@ function displayWeather(weatherData) {
 
     let weatherInfo = `
       <h2> ${city} </h2>
-      <img src="http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png" alt="Weather icon" />
+      <img src="https://openweathermap.org/img/w/${weatherData.weather[0].icon}.png" alt="Weather icon" />
         <ul>
           <li> ${weatherData.weather[0].main} / ${weatherData.weather[0].description} </li>
           <li> <strong>Temperature:</strong> ${Math.round(temp)}°C </li>
@@ -46,3 +48,4 @@ function displayWeather(weatherData) {
     `;
     weatherInfoElement.innerHTML = weatherInfo;
 }
+
