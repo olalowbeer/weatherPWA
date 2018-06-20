@@ -83,5 +83,5 @@ button.addEventListener('click', function () {
     localStorage.clear();
     while (ul.firstChild) {
         ul.removeChild(ul.firstChild);
-    }
+    }   
 });

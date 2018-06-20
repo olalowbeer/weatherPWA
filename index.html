@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width initial-scale=1">
-   
+
     <link rel="apple-touch-icon" sizes="57x57" href="icons/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="icons/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="icons/apple-icon-72x72.png">
@@ -39,15 +39,20 @@
         </header>
         <main>
             <div id="weatherInfo">
-                <!-- This is where JavaScript does it's magic -->
+                <p>Loading weather...</p>
             </div>
-
-            <h2>Previously visited</h2>
-            <ul></ul>
-
-            <button>Clear All</button>
+            <div class="previouslyVisited">
+                <h2>
+                    <span class="headingBackground">Previously visited</span>
+                </h2>
+                <ul>
+                    <!-- This is where JavaScript does it's magic -->
+                </ul>
+                <button id="clearAllButton">Clear All</button>
+            </div>
         </main>
     </div>
+    <!-- .container.collapse -->
 
     <script type="text/javascript">
         if (navigator.serviceWorker.controller) {
