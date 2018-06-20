@@ -35,10 +35,16 @@ function displayWeather(weatherData) {
     const weatherTomorrowElement = document.getElementById('weatherTomorrow');
 
     const sunriseTime = new Date(weatherData.sys.sunrise * 1000);
-    const sunrise = sunriseTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    const sunrise = sunriseTime.toLocaleTimeString([], {
+        hour: '2-digit',
+        minute: '2-digit'
+    });
 
     const sunsetTime = new Date(weatherData.sys.sunset * 1000);
-    const sunset = sunsetTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    const sunset = sunsetTime.toLocaleTimeString([], {
+        hour: '2-digit',
+        minute: '2-digit'
+    });
 
     let weatherInfo = `
       <h2> ${city} </h2>
@@ -54,20 +60,18 @@ function displayWeather(weatherData) {
     weatherInfoElement.innerHTML = weatherInfo;
 }
 
-
 localStorage.setItem('items', JSON.stringify(itemsArray));
 const data = JSON.parse(localStorage.getItem('items'));
 
 const liMaker = (text) => {
-const searchCity = document.getElementById('searchCity');
-  const li = document.createElement('li');
-  li.textContent = text;
-  li.id= searchCity.value;
-  ul.appendChild(li);
-  li.addEventListener('click', function(){
-    getTodaysWeather(li.id)    
-  });
-    
+    const searchCity = document.getElementById('searchCity');
+    const li = document.createElement('li');
+    li.textContent = text;
+    li.id = searchCity.value;
+    ul.appendChild(li);
+    li.addEventListener('click', function () {
+        getTodaysWeather(li.id)
+    });
 }
 
 data.forEach(item => {
@@ -78,5 +82,5 @@ button.addEventListener('click', function () {
     localStorage.clear();
     while (ul.firstChild) {
         ul.removeChild(ul.firstChild);
-    }
+    }   
 });
